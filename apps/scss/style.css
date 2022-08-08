@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap");
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: hsl(0deg, 0%, 100%);
+  --lightGrayish: hsl(270deg, 3%, 87%);
+  --darkGrayish: hsl(279deg, 6%, 55%);
+  --veryDarkViolet: hsl(278deg, 68%, 11%);
+  --red: hsl(0deg, 100%, 66%);
+  --linearGradient1: hsl(249deg, 99%, 64%);
+  --linearGradient2: hsl(278deg, 94%, 30%);
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  font-weight: 500;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.125rem;
+}
+@media (max-width: 39.9375em) {
+  body {
+    min-height: 100vh;
+    padding: unset;
+  }
+}
+@media (max-width: 63.9375em) {
+  body {
+    overflow-y: hidden;
+    padding: 0 1rem;
+  }
+}
+
+.container {
+  width: 71.25rem;
+  margin: 0 auto;
+  padding-inline: 1.25rem;
+}
+@media (max-width: 87.4375em) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 63.9375em) {
+  .container {
+    width: 100%;
+  }
+}
+@media (max-width: 39.9375em) {
+  .container {
+    width: 100%;
+    overflow-x: hidden;
+    padding-inline: unset;
+  }
+}
+
+.flex {
+  display: flex;
+}
+.flex-jc-sb {
+  justify-content: space-between;
+}
+.flex-jc-fe {
+  justify-content: flex-end;
+}
+.flex-jc-c {
+  justify-content: center;
+}
+.flex-ai-c {
+  align-items: center;
+}
+.flex-col {
+  flex-direction: column;
+}
+@media (max-width: 39.9375em) {
+  .flex-row-col {
+    flex-direction: column;
+  }
+}
+.flex-reverse {
+  flex-direction: column;
+}
+@media (max-width: 39.9375em) {
+  .flex-reverse {
+    flex-direction: column-reverse;
+  }
+}
+
+h1 {
+  color: hsl(278deg, 68%, 11%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+::-moz-placeholder {
+  color: var(--darkGrayish);
+}
+
+:-ms-input-placeholder {
+  color: var(--darkGrayish);
+}
+
+::placeholder {
+  color: var(--darkGrayish);
+}
+
+::-moz-placeholder {
+  font-family: inherit;
+  font-size: 1.125rem;
+}
+
+:-ms-input-placeholder {
+  font-family: inherit;
+  font-size: 1.125rem;
+}
+
+input, button, ::placeholder, label {
+  font-family: inherit;
+  font-size: 1.125rem;
+}
+
+label {
+  color: hsl(278deg, 68%, 11%);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  display: inline-block;
+  height: 2.9375rem;
+  width: 100%;
+  font-size: 1.125rem;
+  padding-inline: 1rem;
+  border-image-source: linear-gradient(to right, hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
+  border-radius: 8px;
+  color: hsl(278deg, 68%, 11%);
+  border: 1px solid hsl(249deg, 99%, 64%);
+  outline: none;
+}
+@media (max-width: 39.9375em) {
+  input {
+    padding-inline: 0.5rem;
+  }
+}
+
+.desktop-bg {
+  height: 100vh;
+  width: 30.125rem;
+  background-image: url(/images/bg-main-desktop.png);
+}
+@media (max-width: 63.9375em) {
+  .desktop-bg {
+    width: 12rem;
+  }
+}
+
+.bg {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  z-index: -1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.card-bg {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.mobile-bg {
+  height: 35%;
+  width: 100%;
+  background-image: url(/images/bg-main-mobile.png);
+}
+
+@media (min-width: 40em) {
+  .hide-for-desktop {
+    display: none;
+  }
+}
+
+@media (max-width: 39.9375em) {
+  .hide-for-mobile {
+    display: none;
+  }
+}
+
+.col {
+  width: 45%;
+}
+@media (max-width: 63.9375em) {
+  .col {
+    width: 100%;
+  }
+}
+@media (max-width: 39.9375em) {
+  .col {
+    width: 100%;
+  }
+}
+
+.bank-card {
+  width: 27.875rem;
+  height: 15.25rem;
+  border-radius: 1rem;
+}
+@media (max-width: 87.4375em) {
+  .bank-card {
+    width: 100%;
+  }
+}
+@media (max-width: 63.9375em) {
+  .bank-card {
+    width: 17.75rem;
+    height: 9.75rem;
+  }
+}
+
+.error {
+  font-size: 12px;
+  margin-top: 0.5rem;
+  color: hsl(0deg, 100%, 66%);
+}
+
+.hide {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.month {
+  width: 45%;
+}
+
+.cta {
+  width: 23.875rem;
+  height: 3rem;
+  outline: none;
+  border: none;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  color: hsl(0deg, 0%, 100%);
+  background: hsl(278deg, 68%, 11%);
+}
+@media (max-width: 39.9375em) {
+  .cta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 39.9375em) {
+  .main {
+    gap: 3rem;
+    padding-top: 2rem;
+    width: 100%;
+  }
+}
+.main .cards {
+  position: relative;
+  color: var(--white);
+}
+.main .cards .front {
+  position: absolute;
+  right: 28%;
+  bottom: 55%;
+  padding: 1.5rem 2rem;
+  background-image: url(/images/bg-card-front.png);
+}
+@media (max-width: 63.9375em) {
+  .main .cards .front {
+    right: 20%;
+  }
+}
+@media (max-width: 39.9375em) {
+  .main .cards .front {
+    bottom: unset;
+    top: 40%;
+    right: unset;
+    padding: 1rem;
+  }
+}
+.main .cards .front .logo {
+  width: 25%;
+  margin-bottom: 3.5rem;
+}
+.main .cards .front .logo img {
+  width: 100%;
+}
+@media (max-width: 63.9375em) {
+  .main .cards .front .logo {
+    margin-bottom: 1.3rem;
+    width: 30%;
+  }
+}
+.main .cards .front .nums {
+  font-size: 2rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 63.9375em) {
+  .main .cards .front .nums {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+.main .cards .front .name-date {
+  font-size: 1rem;
+}
+@media (max-width: 39.9375em) {
+  .main .cards .front .name-date {
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+}
+.main .cards .front .name-date .card-holder-name {
+  text-transform: uppercase;
+}
+.main .cards .back {
+  margin-top: 16rem;
+  background-image: url(/images/bg-card-back.png);
+}
+@media (max-width: 63.9375em) {
+  .main .cards .back {
+    margin-top: 10rem;
+  }
+}
+@media (max-width: 39.9375em) {
+  .main .cards .back {
+    margin-top: unset;
+    margin-left: 40px;
+    margin-bottom: 70px;
+  }
+}
+.main .cards .back .cvv {
+  padding-inline: 3.5rem;
+  font-size: 1rem;
+}
+@media (max-width: 39.9375em) {
+  .main .cards .back .cvv {
+    padding-inline: 2rem;
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+}
+.main .form-submit {
+  padding: 2rem;
+  position: relative;
+}
+@media (max-width: 39.9375em) {
+  .main .form-submit {
+    padding-inline: 0;
+  }
+}
+.main .form-submit .form .name {
+  margin-bottom: 1.5rem;
+  width: 23.875rem;
+}
+@media (max-width: 39.9375em) {
+  .main .form-submit .form .name {
+    width: 100%;
+  }
+}
+.main .form-submit .confirmation .icon {
+  margin-bottom: 2rem;
+}
+.main .form-submit .confirmation .icon img {
+  width: 100%;
+}
+.main .form-submit .confirmation .para {
+  color: hsl(279deg, 6%, 55%);
+  margin-bottom: 2.5rem;
+}/*# sourceMappingURL=style.css.map */

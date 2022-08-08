@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap');
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,*::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white: #{$white};
+    --lightGrayish: #{$lightGrayish};
+    --darkGrayish: #{$darkGrayish};
+    --veryDarkViolet: #{$veryDarkViolet};
+    --red: #{$red};
+    --linearGradient1: #{$linearGradient1};
+    --linearGradient2: #{$linearGradient2};
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    font-weight: 500;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: $bodyFont;
+
+    @include breakpoint-down(small){
+        min-height: 100vh;
+        padding: unset;
+    }
+
+    @include breakpoint-down(medium){
+        overflow-y: hidden;
+        padding: 0 1rem ;
+    }
+
+
+}
+
+.container {
+    width: 71.25rem;
+    margin: 0 auto;
+    padding-inline: 1.25rem;
+
+
+    @include breakpoint-down(large){
+        width: 100%;
+    }
+
+    @include breakpoint-down(medium){
+        width: 100%;
+    }
+
+    @include breakpoint-down(small){
+        width: 100%;
+        overflow-x: hidden;
+        padding-inline: unset;
+    }
+}
+
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-fe {
+        justify-content: flex-end;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+
+    &-col {
+        flex-direction: column;
+    }
+
+    &-row-col {
+        @include breakpoint-down(small){
+            flex-direction: column;
+        }
+    }
+
+    &-reverse {
+        flex-direction: column;
+        @include breakpoint-down(small){
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+h1 {
+    color: $veryDarkViolet;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+::placeholder {
+    color: var(--darkGrayish);
+}
+
+input,button,::placeholder,label {
+    font-family: inherit;
+    font-size: $bodyFont;
+}
+
+label {
+    color: $veryDarkViolet;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    display: inline-block;
+    height: 2.9375rem;
+    width: 100%;
+    font-size: $bodyFont;
+    padding-inline: 1rem;
+    border-image-source: linear-gradient(to right, $linearGradient1, $linearGradient2);
+    border-radius: 8px;
+    color: $veryDarkViolet;
+    border: 1px solid $linearGradient1;
+    outline: none;
+
+    @include breakpoint-down(small){
+        padding-inline: .5rem;
+    }
+}
+
+
+.desktop-bg {
+    height: 100vh;
+    width: 30.125rem;
+    background-image: url(/images/bg-main-desktop.png);
+
+
+    @include breakpoint-down(medium){
+        width: 12rem;
+    }
+
+}
+
+.bg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.card-bg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+.mobile-bg {
+    height: 35%;
+    width: 100%;
+    background-image: url(/images/bg-main-mobile.png);
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(medium){
+        display: none;
+    }
+}
+
+.hide-for-mobile {
+    @include breakpoint-down(small){
+        display: none;
+    }
+}
+
+.col {
+    width: 45%;
+
+    @include breakpoint-down(medium){
+        width: 100%;
+    }
+
+    @include breakpoint-down(small){
+        width: 100%;
+    }
+}
+
+.bank-card {
+    width: 27.875rem;
+    height: 15.25rem;
+    border-radius: 1rem;
+    // box-shadow: 5px 0px 5px 1px $lightGrayish;
+
+    @include breakpoint-down(large){
+        width: 100%;
+    }
+
+    @include breakpoint-down(medium){
+        width: 17.75rem;
+        height: 9.75rem;
+    }
+
+    // @include breakpoint-down(small){
+    //     width: 17.75rem;
+    //     height: 9.75rem;
+    // }
+}
+
+.error {
+    font-size: 12px;
+    margin-top: .5rem;
+    color: $red;
+}
+
+.hide {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.month {
+    width: 45%;
+}
+
+
+.cta {
+    width: 23.875rem;
+    height: 3rem;
+    outline: none;
+    border: none;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    color: $white;
+    background: $veryDarkViolet;
+
+    @include breakpoint-down(small){
+        width: 100%;
+    }
+}
+

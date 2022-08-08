@@ -1,0 +1,140 @@
+.main {
+
+    @include breakpoint-down(small){
+        gap: 3rem;
+        padding-top: 2rem;
+        width: 100%;
+    }
+    .cards {
+        position: relative;
+        color: var(--white); 
+
+
+
+        .front {
+            position: absolute;
+            right: 28%;
+            bottom: 55%;
+            padding: 1.5rem 2rem;
+            background-image: url(/images/bg-card-front.png);
+
+            @include breakpoint-down(medium){
+                right: 20%;
+            }
+
+            @include breakpoint-down(small){
+                bottom: unset;
+                top: 40%;
+                right: unset;
+                padding: 1rem;
+            }
+
+            .logo {
+                width: 25%;
+                margin-bottom: 3.5rem;
+
+                img {
+                    width: 100%;
+                }
+
+                @include breakpoint-down(medium){
+                    margin-bottom: 1.3rem;
+                    width: 30%;
+                }
+            }
+
+            .nums {
+                font-size: 2rem;
+                width: 100%;
+                margin-bottom: 1.5rem;
+
+                @include breakpoint-down(medium){
+                    font-size: 1rem;
+                    margin-bottom: 1rem;
+                }
+
+            }
+
+            .name-date {
+                font-size: 1rem;
+
+                @include breakpoint-down(small){
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                    
+                }
+                .card-holder-name{
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .back {
+            margin-top: 16rem;
+            background-image: url(/images/bg-card-back.png);
+
+            @include breakpoint-down(medium){
+              margin-top: 10rem;  
+            }
+
+            @include breakpoint-down(small){
+                margin-top: unset;
+                margin-left: 40px;
+                margin-bottom: 70px;
+            }
+
+            .cvv {
+                padding-inline: 3.5rem;
+                font-size: 1rem;
+
+                @include breakpoint-down(small){
+                padding-inline: 2rem;
+                font-size: 0.75rem;
+                font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .form-submit {
+        padding: 2rem;
+        position: relative;
+
+        @include breakpoint-down(small){
+            padding-inline: 0;
+        }
+
+        
+
+        .form {
+
+            .name {
+                margin-bottom: 1.5rem;
+                width: 23.875rem;
+
+                @include breakpoint-down(small){
+                    width: 100%;
+                }
+            }
+        }
+
+        .confirmation {
+
+            .icon {
+                margin-bottom: 2rem;
+
+                img{
+                    width: 100%;
+                }
+            }
+
+            .para {
+                color: $darkGrayish;
+                margin-bottom: 2.5rem;
+            }
+        }
+
+
+    }
+}
+
