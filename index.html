@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="flex flex-jc-c flex-ai-c flex-col">
+  <div class="desktop-bg hide-for-mobile bg"></div>
+  <div class="mobile-bg hide-for-desktop bg"></div>
+  
+  <main class="container flex flex-jc-sb main flex-row-col flex-ai-c">
+    <div class="cards col flex flex-col">
+      <div class="front bank-card card-bg">
+        <div class="logo">
+          <img src="images/card-logo.svg" alt="">
+        </div>
+        <p class="nums">
+          0000 0000 0000 0000
+        </p>
+        <div class="name-date flex flex-jc-sb">
+          <p class="card-holder-name">
+            Jane Appleseed
+          </p>
+          <p class="expiry-date">
+            <span class="cardMonth">00</span>
+            <span>/</span>
+            <span class="cardYear">00</span>
+          </p>
+        </div>
+      </div>
+      <div class="back bank-card card-bg flex flex-ai-c flex-jc-fe">
+        <p class="cvv">
+          000
+        </p>
+      </div>
+    </div>
+
+    <div class="form-submit col flex-col">
+
+      <form action="" class="form" >
+        <div class="name flex flex-col">
+          <label for="username">
+            Cardholder Name
+          </label>
+          <input type="text" placeholder="e.g. Jane Appleseed">
+        </div>
+        <div class="name flex flex-col">
+          <label for="cardNumber">
+            Card Number
+          </label>
+          <input type="text" max="16" placeholder="e.g. 1234 5678 9123 0000">
+          <p class="error hide">
+            Wrong format, numbers only
+          </p>
+        </div>
+        <div class="expiry name flex flex-jc-sb">
+          <div class="flex flex-col month">
+            <label for="expirydate">
+              Exp. Date (MM/YY)
+            </label>
+            <div class="mmyy flex flex-jc-sb">
+              <input type="text" max="16" placeholder="MM" class="month expiryMonth">
+              <input type="text" placeholder="YY" class="month expiryYear">
+            </div>
+            <p class="error hide">
+              Can't be blank
+            </p>
+          </div>
+
+          <div class="month flex flex-col">
+            <label for="cvc">
+              CVC
+            </label>
+            <input type="text" max="16" placeholder="e.g. 123">
+            <p class="error hide">
+              Can't be blank
+            </p>
+          </div>
+        </div>
+        <button type="submit" id="btn" class="cta">
+          Confirm
+        </button>
+      </form>
+
+      <div class="confirmation flex flex-col flex-ai-c hide">
+        <div class="icon">
+          <img src="images/icon-complete.svg" alt="">
+        </div>
+        <h1>
+          Thank you!
+        </h1>
+        <p class="para">
+          We've added your card details
+        </p>
+
+        <button type="submit" id="btn" class="cta">
+          Continue
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/kinjames">James Kofi Myers</a>.
+      </div>
+    </footer>
+
+    <script src="/apps/js/script.js"></script>
+</body>
+</html>
