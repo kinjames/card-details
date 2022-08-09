@@ -6,11 +6,10 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./apps/scss/style.css">
   
   <title>Frontend Mentor | Interactive card details form</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
@@ -26,22 +25,22 @@
         <div class="logo">
           <img src="images/card-logo.svg" alt="">
         </div>
-        <p class="nums">
+        <p class="nums" id="nums">
           0000 0000 0000 0000
         </p>
         <div class="name-date flex flex-jc-sb">
-          <p class="card-holder-name">
+          <p class="card-holder-name" id="card-holder-name">
             Jane Appleseed
           </p>
           <p class="expiry-date">
-            <span class="cardMonth">00</span>
+            <span class="cardMonth" id="cardMonth">00</span>
             <span>/</span>
-            <span class="cardYear">00</span>
+            <span class="cardYear" id="cardYear">00</span>
           </p>
         </div>
       </div>
       <div class="back bank-card card-bg flex flex-ai-c flex-jc-fe">
-        <p class="cvv">
+        <p class="cvv" id="cardCvc">
           000
         </p>
       </div>
@@ -49,18 +48,18 @@
 
     <div class="form-submit col flex-col">
 
-      <form action="" class="form" >
+      <form action="" class="form" id="myForm">
         <div class="name flex flex-col">
           <label for="username">
             Cardholder Name
           </label>
-          <input type="text" placeholder="e.g. Jane Appleseed">
+          <input type="text" placeholder="e.g. Jane Appleseed" id="cardName">
         </div>
         <div class="name flex flex-col">
           <label for="cardNumber">
             Card Number
           </label>
-          <input type="text" max="16" placeholder="e.g. 1234 5678 9123 0000">
+          <input type="text" max="16" placeholder="e.g. 1234 5678 9123 0000" id="cardNumber">
           <p class="error hide">
             Wrong format, numbers only
           </p>
@@ -71,8 +70,8 @@
               Exp. Date (MM/YY)
             </label>
             <div class="mmyy flex flex-jc-sb">
-              <input type="text" max="16" placeholder="MM" class="month expiryMonth">
-              <input type="text" placeholder="YY" class="month expiryYear">
+              <input type="text" max="16" placeholder="MM" class="month expiryMonth" id="expiryMonth">
+              <input type="text" placeholder="YY" class="month expiryYear" id="expiryYear">
             </div>
             <p class="error hide">
               Can't be blank
@@ -83,7 +82,7 @@
             <label for="cvc">
               CVC
             </label>
-            <input type="text" max="16" placeholder="e.g. 123">
+            <input type="text" max="16" placeholder="e.g. 123" id="cvcNumber">
             <p class="error hide">
               Can't be blank
             </p>
@@ -121,6 +120,6 @@
       </div>
     </footer>
 
-    <script src="/apps/js/script.js"></script>
+    <script src="./apps/js/script.js"></script>
 </body>
 </html>
