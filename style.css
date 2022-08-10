@@ -158,7 +158,7 @@ input {
 .desktop-bg {
   height: 100vh;
   width: 30.125rem;
-  background-image: url(/images/bg-main-desktop.png);
+  background-image: url(images/bg-main-desktop.png);
 }
 @media (max-width: 63.9375em) {
   .desktop-bg {
@@ -185,7 +185,7 @@ input {
 .mobile-bg {
   height: 35%;
   width: 100%;
-  background-image: url(/images/bg-main-mobile.png);
+  background-image: url(images/bg-main-mobile.png);
 }
 
 @media (min-width: 40em) {
@@ -290,7 +290,7 @@ input {
   right: 28%;
   bottom: 55%;
   padding: 1.5rem 2rem;
-  background-image: url(/images/bg-card-front.png);
+  background-image: url(images/bg-card-front.png);
 }
 @media (max-width: 63.9375em) {
   .main .cards .front {
@@ -343,7 +343,7 @@ input {
 }
 .main .cards .back {
   margin-top: 16rem;
-  background-image: url(/images/bg-card-back.png);
+  background-image: url(images/bg-card-back.png);
 }
 @media (max-width: 63.9375em) {
   .main .cards .back {
