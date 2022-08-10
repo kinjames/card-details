@@ -28,16 +28,15 @@ body {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.125rem;
 }
+@media (max-width: 63.9375em) {
+  body {
+    padding: 0 1rem;
+  }
+}
 @media (max-width: 39.9375em) {
   body {
     min-height: 100vh;
-    padding: unset;
-  }
-}
-@media (max-width: 63.9375em) {
-  body {
-    overflow-y: hidden;
-    padding: 0 1rem;
+    padding: 2rem 1rem;
   }
 }
 
@@ -59,7 +58,6 @@ body {
 @media (max-width: 39.9375em) {
   .container {
     width: 100%;
-    overflow-x: hidden;
     padding-inline: unset;
   }
 }
@@ -236,6 +234,7 @@ input {
 .error {
   font-size: 12px;
   margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   color: hsl(0deg, 100%, 66%);
 }
 
@@ -249,6 +248,14 @@ input {
 
 .month {
   width: 45%;
+}
+
+.input.error input {
+  border: 2px solid hsl(0deg, 100%, 66%);
+}
+
+.input.success input {
+  border: 2px solid hsl(249deg, 99%, 64%);
 }
 
 .cta {

@@ -29,14 +29,16 @@ body {
     font-family: 'Space Grotesk', sans-serif;
     font-size: $bodyFont;
 
-    @include breakpoint-down(small){
-        min-height: 100vh;
-        padding: unset;
-    }
+
 
     @include breakpoint-down(medium){
-        overflow-y: hidden;
+        // overflow-y: hidden;
         padding: 0 1rem ;
+    }
+
+    @include breakpoint-down(small){
+        min-height: 100vh;
+        padding: 2rem 1rem;
     }
 
 
@@ -58,7 +60,7 @@ body {
 
     @include breakpoint-down(small){
         width: 100%;
-        overflow-x: hidden;
+        // overflow-x: hidden;
         padding-inline: unset;
     }
 }
@@ -226,6 +228,7 @@ input {
 .error {
     font-size: 12px;
     margin-top: .5rem;
+    margin-bottom: .5rem;
     color: $red;
 }
 
@@ -239,6 +242,14 @@ input {
 
 .month {
     width: 45%;
+}
+
+.input.error input {
+    border: 2px solid $red;   
+}
+
+.input.success input {  
+    border: 2px solid $linearGradient1;  
 }
 
 
