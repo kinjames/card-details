@@ -1,5 +1,7 @@
 .main {
 
+        margin-bottom: 1rem;
+
     @include breakpoint-down(small){
         gap: 3rem;
         padding-top: 2rem;
@@ -8,6 +10,7 @@
     .cards {
         position: relative;
         color: var(--white); 
+        border: 2px solid green;
 
 
 
@@ -97,20 +100,33 @@
     }
 
     .form-submit {
-        padding: 2rem;
+        padding: 1rem;
         position: relative;
+        border: 2px solid red;
 
         @include breakpoint-down(small){
             padding-inline: 0;
+            width: 100%;
         }
 
         
 
         .form {
+            border: 2px solid coral;
+            width: 23.875rem;
+            margin: 0 auto;
+
+            @include breakpoint-down(medium){
+                width: 100%;
+            }
+
+            @include breakpoint-down(small){
+                width: 100%;
+            }
 
             .name {
                 margin-bottom: 1.5rem;
-                width: 23.875rem;
+                width: 100%;
 
                 @include breakpoint-down(small){
                     width: 100%;

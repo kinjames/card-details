@@ -47,7 +47,7 @@
       </div>
     </div>
 
-    <div class="form-submit col flex-col">
+    <div class="form-submit col flex-col flex-jc-c flex">
 
       <form action="" class="form" id="myForm">
         <div class="name flex flex-col">
@@ -61,11 +61,11 @@
             Card Number
           </label>
           <input type="text" max="16" placeholder="e.g. 1234 5678 9123 0000" id="cardNumber">
-          <p class="error hide">
+          <small>
             Wrong format, numbers only
-          </p>
+          </small>
         </div>
-        <div class="expiry name flex flex-jc-sb">
+        <!-- <div class="expiry name flex flex-jc-sb">
           <div class="flex flex-col month">
             <label for="expirydate">
               Exp. Date (MM/YY)
@@ -74,9 +74,9 @@
               <input type="text" max="16" placeholder="MM" class="month expiryMonth" id="expiryMonth">
               <input type="text" placeholder="YY" class="month expiryYear" id="expiryYear">
             </div>
-            <p class="error hide">
+            <small>
               Can't be blank
-            </p>
+            </small>
           </div>
 
           <div class="month flex flex-col">
@@ -84,10 +84,44 @@
               CVC
             </label>
             <input type="text" max="16" placeholder="e.g. 123" id="cvcNumber">
-            <p class="error hide">
+            <small>
               Can't be blank
-            </p>
+            </small>
           </div>
+        </div> -->
+
+        <div class="parent name">
+
+          <div class="">
+            <label for="expiryMonth">
+              Exp. Date
+            </label>
+              <input type="text" max="16" placeholder="MM" class=" expiryMonth" id="expiryMonth">
+            <small>
+              Can't be blank
+            </small>
+          </div>
+
+          <div class="">
+            <label for="expiryYear">
+              (MM/YY)
+            </label>
+              <input type="text" placeholder="YY" class="expiryYear" id="expiryYear">
+            <small>
+              Can't be blank
+            </small>
+          </div>
+
+          <div class="">
+            <label for="cvc">
+              CVC
+            </label>
+            <input type="text" max="3" placeholder="e.g. 123" id="cvcNumber">
+            <small>
+              Can't be blank
+            </small>
+          </div>
+          
         </div>
         <button type="submit" id="btn" class="cta">
           Confirm

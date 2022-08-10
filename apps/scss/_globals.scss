@@ -28,13 +28,9 @@ body {
     font-weight: 500;
     font-family: 'Space Grotesk', sans-serif;
     font-size: $bodyFont;
+    padding: 2rem;
 
 
-
-    @include breakpoint-down(medium){
-        // overflow-y: hidden;
-        padding: 0 1rem ;
-    }
 
     @include breakpoint-down(small){
         min-height: 100vh;
@@ -47,7 +43,7 @@ body {
 .container {
     width: 71.25rem;
     margin: 0 auto;
-    padding-inline: 1.25rem;
+    border: 2px solid yellow;
 
 
     @include breakpoint-down(large){
@@ -60,7 +56,6 @@ body {
 
     @include breakpoint-down(small){
         width: 100%;
-        // overflow-x: hidden;
         padding-inline: unset;
     }
 }
@@ -136,11 +131,15 @@ input {
     border-image-source: linear-gradient(to right, $linearGradient1, $linearGradient2);
     border-radius: 8px;
     color: $veryDarkViolet;
-    border: 1px solid $linearGradient1;
+    border: 1px solid $lightGrayish;
     outline: none;
 
     @include breakpoint-down(small){
         padding-inline: .5rem;
+    }
+
+    &:focus {
+        border: 1px solid #21092f;
     }
 }
 
@@ -193,7 +192,11 @@ input {
 }
 
 .col {
-    width: 45%;
+    width: 40%;
+
+    @include breakpoint-down(large){
+        width: 45%;
+    }
 
     @include breakpoint-down(medium){
         width: 100%;
@@ -208,7 +211,7 @@ input {
     width: 27.875rem;
     height: 15.25rem;
     border-radius: 1rem;
-    // box-shadow: 5px 0px 5px 1px $lightGrayish;
+
 
     @include breakpoint-down(large){
         width: 100%;
@@ -219,39 +222,7 @@ input {
         height: 9.75rem;
     }
 
-    // @include breakpoint-down(small){
-    //     width: 17.75rem;
-    //     height: 9.75rem;
-    // }
 }
-
-.error {
-    font-size: 12px;
-    margin-top: .5rem;
-    margin-bottom: .5rem;
-    color: $red;
-}
-
-.hide {
-    display: none;
-}
-
-.active {
-    display: block;
-}
-
-.month {
-    width: 45%;
-}
-
-.input.error input {
-    border: 2px solid $red;   
-}
-
-.input.success input {  
-    border: 2px solid $linearGradient1;  
-}
-
 
 .cta {
     width: 23.875rem;
@@ -267,4 +238,61 @@ input {
         width: 100%;
     }
 }
+
+small{
+    font-size: 0.75rem;
+    // margin-top: .3rem;
+    color: $red;
+    visibility: hidden;
+}
+
+.input.error input {  
+    border: 2px solid hsl(0, 100%, 74%); 
+}
+
+.input.error small {  
+    visibility: visible;
+}
+
+.hide {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.month {
+    width: 45%;
+
+}
+
+.expiry {
+    gap: 2rem;
+}
+
+.input.error input {
+    border: 2px solid $red;   
+}
+
+.input.success input {  
+    border: 2px solid $linearGradient1;  
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 2fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 0px;
+    margin-bottom: 1.5rem;
+    width: 23.875rem;
+
+    @include breakpoint-down(small){
+        width: 100%;
+    }
+}
+
+
+
 

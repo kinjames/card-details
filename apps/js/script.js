@@ -12,6 +12,8 @@ let cardMonth = document.getElementById('cardMonth');
 let cardYear = document.getElementById('cardYear');
 let cardCvc = document.getElementById('cardCvc');
 
+errorMessage = document.querySelector('.error')
+
 let form = document.getElementById('myForm');
 
 cardName.addEventListener('input', function(){
@@ -35,30 +37,21 @@ cvcNumber.addEventListener('input', function(){
 });
 
 
-form.addEventListener('submit', function(){
 
-})
-
-function showError(input,message) {  
-    const formControl = input.parentElement;  
-    formControl.className = "input error";  
-    const small = formControl.querySelector("error");  
-    small.innerText = message;
+function showError(input, message) {  
+    const formControl = input.parentElement;
+    const small = formControl.querySelector("small");  
+    formControl.className = "input error";    
+    small.innerText = message;  
 } 
 
 function showSuccess(input) {  
     const formControl = input.parentElement;  
     formControl.classList.add("success");  
-}
+} 
 
-form.addEventListener("submit", (e) => {  
-    e.preventDefault();  
-    checkRequired([cardName, cardNumber, expiryMonth, expiryYear, cvcNumber]); 
-    checkNumber(cardNumber) 
-    checkMonth(expiryMonth);
-    checkYear(expiryYear); 
-    checkCvc(cvcNumber);
-});
+
+
 
 function checkRequired(inputArr) {  
     inputArr.forEach(function (input) {  
@@ -70,47 +63,57 @@ function checkRequired(inputArr) {
     });  
 }
 
-
-function checkNumber(cardNumber){
+function checkNumber(input) {
     let numberCode = /^[0-9]{16}$/;
-    return numberCode.test(cardNumber)
-    // if (numberCode.test(input.value.trim())){
-    //     showSuccess(input);
-    // } else {
-    //     showError(input,'Wrong format, numbers only')
-    // }
-}
+    if (numberCode.test(input.value.trim())) {  
+        showSuccess(input); 
+    } else {  
+        showError(input,'Wrong format, numbers only') 
+    } 
+};
 
 
-function checkMonth(expiryMonth){
+function checkMonth(input){
     let monthCode = /(^[1-9]$)|(^[0-1][1-2]$)|(^0[1-9]$)/;
-    return monthCode.test(expiryMonth);
-    // if(monthCode.test(input.value.trim())){
-    //     showSuccess(input)
-    // } else {
-    //     showError(input,'Wrong Format')
-    // }
+    if(monthCode.test(input.value.trim())){
+        showSuccess(input)
+    } 
+    else if (input.value.trim() === "") {  
+        showError(input, `Can't be blank`);  
+       }
+    else {
+        showError(input,"Can't be blank")
+    }
 }
 
-function checkYear(expiryYear){
+function checkYear(input){
     let yearCode = /[0-2][0-5]|[1-9]/g ;
-    return yearCode.test(expiryYear)
-    // if (yearCode.test(input.value.trim())){
-    //     showSuccess(input);
-    // } else {
-    //     showError(input,'Wrong format')
-    // }
+    if (yearCode.test(input.value.trim())){
+        showSuccess(input);
+    } else {
+        showError(input,"Can't be blank")
+
+    }
 }
 
-function checkCvc(cvcNumber){
+function checkCvc(input){
     let cvcCode = /^[0-9]{3}$/;
-    return cvcCode.test(cvcNumber)
-    // if (cvcCode.test(input.value.trim())){
-    //     showSuccess(input);
-    // } else {
-    //     showError(input,'Wrong format')
-    // }
+    if (cvcCode.test(input.value.trim())){
+        showSuccess(input);
+    } else {
+        showError(input,"Can't be blank")
+    }
 }
+
+form.addEventListener("submit", (e) => {  
+    e.preventDefault();
+    checkNumber(cardNumber) 
+    checkMonth(expiryMonth);
+    checkYear(expiryYear); 
+    checkCvc(cvcNumber);
+    checkRequired([cardName, cardNumber, expiryMonth, expiryYear, cvcNumber]); 
+
+});
 
 
 

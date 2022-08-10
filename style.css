@@ -27,11 +27,7 @@ body {
   font-weight: 500;
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.125rem;
-}
-@media (max-width: 63.9375em) {
-  body {
-    padding: 0 1rem;
-  }
+  padding: 2rem;
 }
 @media (max-width: 39.9375em) {
   body {
@@ -43,7 +39,7 @@ body {
 .container {
   width: 71.25rem;
   margin: 0 auto;
-  padding-inline: 1.25rem;
+  border: 2px solid yellow;
 }
 @media (max-width: 87.4375em) {
   .container {
@@ -146,13 +142,16 @@ input {
   border-image-source: linear-gradient(to right, hsl(249deg, 99%, 64%), hsl(278deg, 94%, 30%));
   border-radius: 8px;
   color: hsl(278deg, 68%, 11%);
-  border: 1px solid hsl(249deg, 99%, 64%);
+  border: 1px solid hsl(270deg, 3%, 87%);
   outline: none;
 }
 @media (max-width: 39.9375em) {
   input {
     padding-inline: 0.5rem;
   }
+}
+input:focus {
+  border: 1px solid #21092f;
 }
 
 .desktop-bg {
@@ -201,7 +200,12 @@ input {
 }
 
 .col {
-  width: 45%;
+  width: 40%;
+}
+@media (max-width: 87.4375em) {
+  .col {
+    width: 45%;
+  }
 }
 @media (max-width: 63.9375em) {
   .col {
@@ -231,33 +235,6 @@ input {
   }
 }
 
-.error {
-  font-size: 12px;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  color: hsl(0deg, 100%, 66%);
-}
-
-.hide {
-  display: none;
-}
-
-.active {
-  display: block;
-}
-
-.month {
-  width: 45%;
-}
-
-.input.error input {
-  border: 2px solid hsl(0deg, 100%, 66%);
-}
-
-.input.success input {
-  border: 2px solid hsl(249deg, 99%, 64%);
-}
-
 .cta {
   width: 23.875rem;
   height: 3rem;
@@ -274,6 +251,62 @@ input {
   }
 }
 
+small {
+  font-size: 0.75rem;
+  color: hsl(0deg, 100%, 66%);
+  visibility: hidden;
+}
+
+.input.error input {
+  border: 2px solid hsl(0deg, 100%, 74%);
+}
+
+.input.error small {
+  visibility: visible;
+}
+
+.hide {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.month {
+  width: 45%;
+}
+
+.expiry {
+  gap: 2rem;
+}
+
+.input.error input {
+  border: 2px solid hsl(0deg, 100%, 66%);
+}
+
+.input.success input {
+  border: 2px solid hsl(249deg, 99%, 64%);
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 2fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 0px;
+  margin-bottom: 1.5rem;
+  width: 23.875rem;
+}
+@media (max-width: 39.9375em) {
+  .parent {
+    width: 100%;
+  }
+}
+
+.main {
+  margin-bottom: 1rem;
+}
 @media (max-width: 39.9375em) {
   .main {
     gap: 3rem;
@@ -284,6 +317,7 @@ input {
 .main .cards {
   position: relative;
   color: var(--white);
+  border: 2px solid green;
 }
 .main .cards .front {
   position: absolute;
@@ -369,17 +403,34 @@ input {
   }
 }
 .main .form-submit {
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
+  border: 2px solid red;
 }
 @media (max-width: 39.9375em) {
   .main .form-submit {
     padding-inline: 0;
+    width: 100%;
+  }
+}
+.main .form-submit .form {
+  border: 2px solid coral;
+  width: 23.875rem;
+  margin: 0 auto;
+}
+@media (max-width: 63.9375em) {
+  .main .form-submit .form {
+    width: 100%;
+  }
+}
+@media (max-width: 39.9375em) {
+  .main .form-submit .form {
+    width: 100%;
   }
 }
 .main .form-submit .form .name {
   margin-bottom: 1.5rem;
-  width: 23.875rem;
+  width: 100%;
 }
 @media (max-width: 39.9375em) {
   .main .form-submit .form .name {
