@@ -43,11 +43,11 @@ body {
 .container {
     width: 71.25rem;
     margin: 0 auto;
-    border: 2px solid yellow;
 
 
     @include breakpoint-down(large){
         width: 100%;
+        padding: 2rem;
     }
 
     @include breakpoint-down(medium){
@@ -171,6 +171,10 @@ input {
     background-position: center center;
     background-size: cover;
 }
+
+.attribution { font-size: 11px; text-align: center; 
+    margin-top: 1rem;}
+.attribution a { color: hsl(228, 45%, 44%); }
 
 
 .mobile-bg {

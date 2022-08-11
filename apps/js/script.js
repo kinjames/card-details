@@ -14,6 +14,8 @@ let cardCvc = document.getElementById('cardCvc');
 
 errorMessage = document.querySelector('.error')
 
+let confirmation = document.getElementById('confirmation');
+
 let form = document.getElementById('myForm');
 
 cardName.addEventListener('input', function(){
@@ -42,7 +44,8 @@ function showError(input, message) {
     const formControl = input.parentElement;
     const small = formControl.querySelector("small");  
     formControl.className = "input error";    
-    small.innerText = message;  
+    small.innerText = message;
+  
 } 
 
 function showSuccess(input) {  
@@ -56,7 +59,10 @@ function showSuccess(input) {
 function checkRequired(inputArr) {  
     inputArr.forEach(function (input) {  
      if (input.value.trim() === "") {  
-      showError(input, `Can't be blank`);  
+    //   showError(input, `Can't be blank`);  
+    setTimeout(function(){
+        showError(input, `Can't be blank`)
+    },1000);
      } else {  
       showSuccess(input);  
      }  
@@ -67,7 +73,11 @@ function checkNumber(input) {
     let numberCode = /^[0-9]{16}$/;
     if (numberCode.test(input.value.trim())) {  
         showSuccess(input); 
-    } else {  
+    }
+    else if (input.value.trim() !== 16) {  
+        showError(input, `Length must be 16`);  
+    }
+    else {  
         showError(input,'Wrong format, numbers only') 
     } 
 };
@@ -78,9 +88,6 @@ function checkMonth(input){
     if(monthCode.test(input.value.trim())){
         showSuccess(input)
     } 
-    else if (input.value.trim() === "") {  
-        showError(input, `Can't be blank`);  
-       }
     else {
         showError(input,"Can't be blank")
     }
@@ -91,7 +98,7 @@ function checkYear(input){
     if (yearCode.test(input.value.trim())){
         showSuccess(input);
     } else {
-        showError(input,"Can't be blank")
+        showError(input,"Wrong format")
 
     }
 }
@@ -101,17 +108,20 @@ function checkCvc(input){
     if (cvcCode.test(input.value.trim())){
         showSuccess(input);
     } else {
-        showError(input,"Can't be blank")
+        showError(input,"Wrong format")
     }
 }
 
 form.addEventListener("submit", (e) => {  
     e.preventDefault();
+    checkRequired([cardName, cardNumber, expiryMonth, expiryYear, cvcNumber]); 
     checkNumber(cardNumber) 
     checkMonth(expiryMonth);
     checkYear(expiryYear); 
     checkCvc(cvcNumber);
-    checkRequired([cardName, cardNumber, expiryMonth, expiryYear, cvcNumber]); 
+
+    confirmation.classList.remove('hide');
+    form.classList.add('hide')
 
 });
 

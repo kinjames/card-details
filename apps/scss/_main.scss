@@ -10,7 +10,6 @@
     .cards {
         position: relative;
         color: var(--white); 
-        border: 2px solid green;
 
 
 
@@ -20,6 +19,10 @@
             bottom: 55%;
             padding: 1.5rem 2rem;
             background-image: url(/images/bg-card-front.png);
+
+            @include breakpoint-down(large){
+                right: 2.1875rem;
+            }
 
             @include breakpoint-down(medium){
                 right: 20%;
@@ -102,7 +105,6 @@
     .form-submit {
         padding: 1rem;
         position: relative;
-        border: 2px solid red;
 
         @include breakpoint-down(small){
             padding-inline: 0;
@@ -112,7 +114,6 @@
         
 
         .form {
-            border: 2px solid coral;
             width: 23.875rem;
             margin: 0 auto;
 
