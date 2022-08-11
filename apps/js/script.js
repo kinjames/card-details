@@ -18,7 +18,7 @@ let confirmation = document.getElementById("confirmation");
 
 let form = document.getElementById("myForm");
 
-let submitButton = document.querySelector(".cta");
+let submitButton = document.querySelector(".cta-btn");
 
 let noErrors = true;
 
